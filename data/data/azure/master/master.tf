@@ -121,3 +121,26 @@ resource "azurerm_linux_virtual_machine" "master" {
   }
 }
 
+resource "azurerm_managed_disk" "master" {
+  count = var.instance_count
+
+  name                 = "${var.cluster_id}-containers-${count.index}"
+  location             = var.region
+  resource_group_name  = var.resource_group_name
+  storage_account_type = "Premium_LRS"
+  create_option        = "Empty"
+  // https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types#disk-size-1
+  disk_size_gb         = 1024 # p30 disk 200 MB/sec ; 5,000 IOPS
+  // disk_size_gb         = 512 # p20 disk 150 MB/sec ; 2,300 IOPS
+  // disk_size_gb         = 256 # p15 disk 125 MB/sec ; 1,100 IOPS
+  zones = [var.availability_zones[count.index]]
+}
+
+resource "azurerm_virtual_machine_data_disk_attachment" "master" {
+  count = var.use_ipv4 ? var.instance_count : 0
+
+  managed_disk_id    = element(azurerm_managed_disk.master.*.id, count.index)
+  virtual_machine_id = element(azurerm_linux_virtual_machine.master.*.id, count.index)
+  lun                = "10"
+  caching            = "None"
+}
