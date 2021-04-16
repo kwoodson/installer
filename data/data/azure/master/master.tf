@@ -12,6 +12,7 @@ resource "azurerm_network_interface" "master" {
   name                = "${var.cluster_id}-master${count.index}-nic"
   location            = var.region
   resource_group_name = var.resource_group_name
+  enable_accelerated_networking = true
 
   dynamic "ip_configuration" {
     for_each = [for ip in [
