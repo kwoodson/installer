@@ -94,6 +94,7 @@ module "master" {
   os_volume_size         = var.azure_master_root_volume_size
   private                = module.vnet.private
   outbound_udr           = var.azure_outbound_user_defined_routing
+  accelerated_networking = var.azure_master_enable_accelerated_networking
 
   use_ipv4 = var.use_ipv4
   use_ipv6 = var.use_ipv6
