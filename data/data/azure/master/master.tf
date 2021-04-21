@@ -109,6 +109,10 @@ resource "azurerm_linux_virtual_machine" "master" {
     disk_size_gb         = var.os_volume_size
   }
 
+  additional_capabilities {
+      ultra_ssd_enabled = true
+  }
+
   source_image_id = var.vm_image
 
   //we don't provide a ssh key, because it is set with ignition. 
@@ -127,10 +131,13 @@ resource "azurerm_managed_disk" "master" {
   name                 = "${var.cluster_id}-etcd-${count.index}"
   location             = var.region
   resource_group_name  = var.resource_group_name
-  storage_account_type = "Premium_LRS"
+  # storage_account_type = "Premium_LRS"
+  storage_account_type = "UltraSSD_LRS"
   create_option        = "Empty"
   // https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types#disk-size-1
-  disk_size_gb         = 1024 # p30 disk 200 MB/sec
+  disk_size_gb         = 64
+  disk_iops_read_write = 2500
+  disk_mbps_read_write = 100
   zones = [var.availability_zones[count.index]]
 }
 
