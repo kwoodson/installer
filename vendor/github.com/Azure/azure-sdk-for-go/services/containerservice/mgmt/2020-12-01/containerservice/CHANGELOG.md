@@ -1,5 +1,12 @@
-Generated from https://github.com/Azure/azure-rest-api-specs/tree/b08824e05817297a4b2874d8db5e6fc8c29349c9//specification/containerservice/resource-manager/readme.md tag: `package-2020-12`
+# Change History
 
-Code generator @microsoft.azure/autorest.go@2.1.171
+## Additive Changes
 
+### New Funcs
 
+1. CredentialResult.MarshalJSON() ([]byte, error)
+1. CredentialResults.MarshalJSON() ([]byte, error)
+1. ManagedClusterIdentityUserAssignedIdentitiesValue.MarshalJSON() ([]byte, error)
+1. OperationListResult.MarshalJSON() ([]byte, error)
+1. OperationValueDisplay.MarshalJSON() ([]byte, error)
+1. SubResource.MarshalJSON() ([]byte, error)
