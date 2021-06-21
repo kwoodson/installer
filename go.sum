@@ -884,6 +884,7 @@ github.com/hashicorp/go-cleanhttp v0.5.1 h1:dH3aiDG9Jvb5r5+bYHsikaOUIpcM0xvgMXVo
 github.com/hashicorp/go-cleanhttp v0.5.1/go.mod h1:JpRdi6/HCYpAwUzNwuwqhbovhLtngrth3wmdIIUrZ80=
 github.com/hashicorp/go-cleanhttp v0.5.2 h1:035FKYIWjmULyFRBKPs8TBQoi0x6d9G4xc9neXJWAZQ=
 github.com/hashicorp/go-cleanhttp v0.5.2/go.mod h1:kO/YDlP8L1346E6Sodw+PrpBSV4/SoxCXGY6BqNFT48=
+github.com/hashicorp/go-cty v1.4.1-0.20200414143053-d3edf31b6320 h1:1/D3zfFHttUKaCaGKZ/dR2roBXv0vKbSCnssIldfQdI=
 github.com/hashicorp/go-cty v1.4.1-0.20200414143053-d3edf31b6320/go.mod h1:EiZBMaudVLy8fmjf9Npq1dq9RalhveqZG5w/yz3mHWs=
 github.com/hashicorp/go-gatedio v0.5.0/go.mod h1:Lr3t8L6IyxD3DAeaUxGcgl2JnRUpWMCsmBl4Omu/2t4=
 github.com/hashicorp/go-gcp-common v0.5.0/go.mod h1:IDGUI2N/OS3PiU4qZcXJeWKPI6O/9Y8hOrbSiMcqyYw=
@@ -997,8 +998,10 @@ github.com/hashicorp/terraform-json v0.6.0/go.mod h1:eAbqb4w0pSlRmdvl8fOyHAi/+8j
 github.com/hashicorp/terraform-json v0.10.0/go.mod h1:3defM4kkMfttwiE7VakJDwCd4R+umhSQnvJwORXbprE=
 github.com/hashicorp/terraform-json v0.11.0 h1:4zDqqW2F3kOysORIaYKFGgWDYIRA3hwqx3XHeHkbBQ0=
 github.com/hashicorp/terraform-json v0.11.0/go.mod h1:pmbq9o4EuL43db5+0ogX10Yofv1nozM+wskr/bGFJpI=
+github.com/hashicorp/terraform-plugin-go v0.3.0 h1:AJqYzP52JFYl9NABRI7smXI1pNjgR5Q/y2WyVJ/BOZA=
 github.com/hashicorp/terraform-plugin-go v0.3.0/go.mod h1:dFHsQMaTLpON2gWhVWT96fvtlc/MF1vSy3OdMhWBzdM=
 github.com/hashicorp/terraform-plugin-sdk/v2 v2.0.0/go.mod h1:xOf85UtHJ0/9/EF3eKgZFlJ6feN8sDtjQRWRHhimCUw=
+github.com/hashicorp/terraform-plugin-sdk/v2 v2.6.1 h1:OZ+Q7irJBDhb71XzMSPGJvTIW101sOmbDg5i5qV1odY=
 github.com/hashicorp/terraform-plugin-sdk/v2 v2.6.1/go.mod h1:72j8cKfs9IirGhPMXJJWLTvRUK4zATtrCOvs2avDlo8=
 github.com/hashicorp/terraform-plugin-test/v2 v2.0.0-20200724200815-faa9931ac59e/go.mod h1:C6VALgUlvaif+PnHyRGKWPTdQkMJK4NQ20VJolxZLI0=
 github.com/hashicorp/terraform-plugin-test/v2 v2.1.2 h1:p96IIn+XpvVjw7AtN8y9MKxn0x69S7wtbGf7JgDJoIk=
@@ -1372,6 +1375,7 @@ github.com/nirarg/terraform-provider-kubevirt v0.0.0-20201222125919-101cee051ed3
 github.com/nirarg/terraform-provider-kubevirt v0.0.0-20201222125919-101cee051ed3/go.mod h1:FMugN9a6XOJm9mLFEV/+F4IJzdZmpLn/OaNRa8S/Ens=
 github.com/nishanths/exhaustive v0.0.0-20200811152831-6cf413ae40e0/go.mod h1:wBEpHwM2OdmeNpdCvRPUlkEbBuaFmcK4Wv8Q7FuGW3c=
 github.com/nishanths/exhaustive v0.1.0/go.mod h1:S1j9110vxV1ECdCudXRkeMnFQ/DQk9ajLT0Uf2MYZQQ=
+github.com/nsf/jsondiff v0.0.0-20200515183724-f29ed568f4ce h1:RPclfga2SEJmgMmz2k+Mg7cowZ8yv4Trqw9UsJby758=
 github.com/nsf/jsondiff v0.0.0-20200515183724-f29ed568f4ce/go.mod h1:uFMI8w+ref4v2r9jz+c9i1IfIttS/OkmLfrk1jne5hs=
 github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d h1:VhgPp6v9qf9Agr/56bj7Y/xa04UccTW04VP0Qed4vnQ=
 github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d/go.mod h1:YUTz3bUH2ZwIWBy3CJBeOBEugqcmXREj14T+iG/4k4U=
@@ -1784,8 +1788,6 @@ github.com/terraform-provider-openstack/terraform-provider-openstack v1.37.0/go.
 github.com/terraform-providers/terraform-provider-azuread v0.9.0 h1:XLzFgVHakq6qjJ2L0o/tN2yHu/hT4vIW9sKtejr7gPs=
 github.com/terraform-providers/terraform-provider-azuread v0.9.0/go.mod h1:sSDzB/8CD639+yWo5lZf+NJvGSYQBSS6z+GoET9IrzE=
 github.com/terraform-providers/terraform-provider-azurerm v1.44.1-0.20200911233120-57b2bfc9d42c/go.mod h1:vDv6JXP1AILPSbGX2ZyDfmHde+d54kFT6g6vCSsZL4Q=
-github.com/terraform-providers/terraform-provider-azurerm v1.44.1-0.20210617133049-5e5769f6c6d8 h1:np9tOEe5lyD3wzslkhy+jgiRpRFENl3VrTDnVjAbHMA=
-github.com/terraform-providers/terraform-provider-azurerm v1.44.1-0.20210617133049-5e5769f6c6d8/go.mod h1:Qq+FGg1s25lPjUxrMcJFpUuYaRPhT/5JnwwNWaFoepU=
 github.com/terraform-providers/terraform-provider-azurerm v1.44.1-0.20210621151614-c2d7dcd07291 h1:ztjcj2S+dAEqHYwLvu38QExVYn8eIRdZZpD0q68STdU=
 github.com/terraform-providers/terraform-provider-azurerm v1.44.1-0.20210621151614-c2d7dcd07291/go.mod h1:nMv4k2/tDWgK7tVk8m3wKYfjk7Q2RNJlN4Alc93xB4w=
 github.com/terraform-providers/terraform-provider-google v1.20.1-0.20200623174414-27107f2ee160 h1:Ghc1PD9TckxsdyP1BG+dM8q84cNNyL93qRmYq/PVNow=

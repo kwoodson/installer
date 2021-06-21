@@ -21,7 +21,7 @@ cloud.google.com/go/storage
 github.com/AlecAivazis/survey/v2
 github.com/AlecAivazis/survey/v2/core
 github.com/AlecAivazis/survey/v2/terminal
-# github.com/Azure/azure-sdk-for-go v55.2.0+incompatible
+# github.com/Azure/azure-sdk-for-go v55.3.0+incompatible
 ## explicit
 github.com/Azure/azure-sdk-for-go/profiles/2017-03-09/resources/mgmt/resources
 github.com/Azure/azure-sdk-for-go/profiles/latest/dns/mgmt/dns
@@ -779,6 +779,13 @@ github.com/hashicorp/go-azure-helpers/storage
 github.com/hashicorp/go-checkpoint
 # github.com/hashicorp/go-cleanhttp v0.5.2
 github.com/hashicorp/go-cleanhttp
+# github.com/hashicorp/go-cty v1.4.1-0.20200414143053-d3edf31b6320
+github.com/hashicorp/go-cty/cty
+github.com/hashicorp/go-cty/cty/convert
+github.com/hashicorp/go-cty/cty/gocty
+github.com/hashicorp/go-cty/cty/json
+github.com/hashicorp/go-cty/cty/msgpack
+github.com/hashicorp/go-cty/cty/set
 # github.com/hashicorp/go-getter v1.5.4
 ## explicit
 github.com/hashicorp/go-getter
@@ -924,6 +931,13 @@ github.com/hashicorp/terraform-exec/tfinstall
 # github.com/hashicorp/terraform-json v0.11.0
 ## explicit
 github.com/hashicorp/terraform-json
+# github.com/hashicorp/terraform-plugin-go v0.3.0
+github.com/hashicorp/terraform-plugin-go/tfprotov5
+github.com/hashicorp/terraform-plugin-go/tfprotov5/internal/fromproto
+github.com/hashicorp/terraform-plugin-go/tfprotov5/internal/tfplugin5
+github.com/hashicorp/terraform-plugin-go/tfprotov5/internal/toproto
+github.com/hashicorp/terraform-plugin-go/tfprotov5/server
+github.com/hashicorp/terraform-plugin-go/tftypes
 # github.com/hashicorp/terraform-plugin-sdk v1.17.2 => github.com/openshift/hashicorp-terraform-plugin-sdk v1.16.0-openshift
 ## explicit
 github.com/hashicorp/terraform-plugin-sdk/acctest
@@ -977,6 +991,25 @@ github.com/hashicorp/terraform-plugin-sdk/plugin
 github.com/hashicorp/terraform-plugin-sdk/terraform
 github.com/hashicorp/terraform-plugin-sdk/tfdiags
 github.com/hashicorp/terraform-plugin-sdk/tfplugin5
+# github.com/hashicorp/terraform-plugin-sdk/v2 v2.6.1
+github.com/hashicorp/terraform-plugin-sdk/v2/diag
+github.com/hashicorp/terraform-plugin-sdk/v2/helper/customdiff
+github.com/hashicorp/terraform-plugin-sdk/v2/helper/logging
+github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource
+github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema
+github.com/hashicorp/terraform-plugin-sdk/v2/helper/structure
+github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation
+github.com/hashicorp/terraform-plugin-sdk/v2/internal/addrs
+github.com/hashicorp/terraform-plugin-sdk/v2/internal/configs/configschema
+github.com/hashicorp/terraform-plugin-sdk/v2/internal/configs/hcl2shim
+github.com/hashicorp/terraform-plugin-sdk/v2/internal/helper/hashcode
+github.com/hashicorp/terraform-plugin-sdk/v2/internal/plans/objchange
+github.com/hashicorp/terraform-plugin-sdk/v2/internal/plugin/convert
+github.com/hashicorp/terraform-plugin-sdk/v2/internal/plugintest
+github.com/hashicorp/terraform-plugin-sdk/v2/internal/tfdiags
+github.com/hashicorp/terraform-plugin-sdk/v2/meta
+github.com/hashicorp/terraform-plugin-sdk/v2/plugin
+github.com/hashicorp/terraform-plugin-sdk/v2/terraform
 # github.com/hashicorp/terraform-plugin-test/v2 v2.2.1
 ## explicit
 github.com/hashicorp/terraform-plugin-test/v2
@@ -1338,7 +1371,7 @@ github.com/terraform-providers/terraform-provider-aws/aws/internal/service/kms/w
 github.com/terraform-providers/terraform-provider-aws/aws/internal/service/secretsmanager/waiter
 github.com/terraform-providers/terraform-provider-aws/aws/internal/service/servicediscovery/waiter
 github.com/terraform-providers/terraform-provider-aws/aws/internal/service/workspaces/waiter
-# github.com/terraform-providers/terraform-provider-azurerm v1.44.1-0.20210617133049-5e5769f6c6d8
+# github.com/terraform-providers/terraform-provider-azurerm v1.44.1-0.20210621151614-c2d7dcd07291
 ## explicit
 github.com/terraform-providers/terraform-provider-azurerm/azurerm
 github.com/terraform-providers/terraform-provider-azurerm/azurerm/helpers/azure
@@ -1762,7 +1795,6 @@ github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/servi
 github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/tags
 github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/tf/base64
 github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/tf/pluginsdk
-github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/tf/schema
 github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/tf/set
 github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/tf/state
 github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/tf/suppress
@@ -1808,6 +1840,9 @@ github.com/ulikunitz/xz/lzma
 # github.com/vincent-petithory/dataurl v0.0.0-20191104211930-d1553a71de50
 ## explicit
 github.com/vincent-petithory/dataurl
+# github.com/vmihailenco/msgpack v4.0.4+incompatible
+github.com/vmihailenco/msgpack
+github.com/vmihailenco/msgpack/codes
 # github.com/vmihailenco/msgpack/v4 v4.3.12
 github.com/vmihailenco/msgpack/v4
 github.com/vmihailenco/msgpack/v4/codes
