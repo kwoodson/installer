@@ -7,6 +7,9 @@ func Default() UserFeatures {
 			PurgeSoftDeleteOnDestroy:    true,
 			RecoverSoftDeletedKeyVaults: true,
 		},
+		LogAnalyticsWorkspace: LogAnalyticsWorkspaceFeatures{
+			PermanentlyDeleteOnDestroy: false,
+		},
 		Network: NetworkFeatures{
 			RelaxedLocking: false,
 		},
@@ -14,10 +17,12 @@ func Default() UserFeatures {
 			DeleteNestedItemsDuringDeletion: true,
 		},
 		VirtualMachine: VirtualMachineFeatures{
-			DeleteOSDiskOnDeletion: true,
-			GracefulShutdown:       false,
+			DeleteOSDiskOnDeletion:     true,
+			GracefulShutdown:           false,
+			SkipShutdownAndForceDelete: false,
 		},
 		VirtualMachineScaleSet: VirtualMachineScaleSetFeatures{
+			ForceDelete:               false,
 			RollInstancesWhenRequired: true,
 		},
 	}

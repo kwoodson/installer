@@ -6,13 +6,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/features"
-
 	"github.com/hashicorp/go-azure-helpers/authentication"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/validation"
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 	"github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/clients"
+	"github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/features"
 	"github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/resourceproviders"
 	"github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/sdk"
 	"github.com/terraform-providers/terraform-provider-azurerm/azurerm/utils"
@@ -238,7 +237,6 @@ func azureProvider(supportLegacyTestSuite bool) terraform.ResourceProvider {
 		p.Schema["skip_credentials_validation"] = &schema.Schema{
 			Type:        schema.TypeBool,
 			Optional:    true,
-			DefaultFunc: schema.EnvDefaultFunc("ARM_SKIP_CREDENTIALS_VALIDATION", false),
 			Description: "[DEPRECATED] This will cause the AzureRM Provider to skip verifying the credentials being used are valid.",
 			Deprecated:  "This field is deprecated and will be removed in version 3.0 of the Azure Provider",
 		}
@@ -316,6 +314,10 @@ func providerConfigure(p *schema.Provider) schema.ConfigureFunc {
 			DisableTerraformPartnerID:   d.Get("disable_terraform_partner_id").(bool),
 			Features:                    expandFeatures(d.Get("features").([]interface{})),
 			StorageUseAzureAD:           d.Get("storage_use_azuread").(bool),
+
+			// this field is intentionally not exposed in the provider block, since it's only used for
+			// platform level tracing
+			CustomCorrelationRequestID: os.Getenv("ARM_CORRELATION_REQUEST_ID"),
 		}
 		client, err := clients.Build(p.StopContext(), clientBuilder)
 		if err != nil {
@@ -324,14 +326,9 @@ func providerConfigure(p *schema.Provider) schema.ConfigureFunc {
 
 		client.StopContext = p.StopContext()
 
-		// replaces the context between tests
-		p.MetaReset = func() error {
-			client.StopContext = p.StopContext()
-			return nil
-		}
-
 		if !skipProviderRegistration {
-			// List all the available providers and their registration state to avoid unnecessary requests.
+			// List all the available providers and their registration state to avoid unnecessary
+			// requests. This also lets us check if the provider credentials are correct.
 			ctx := client.StopContext
 			providerList, err := client.Resource.ProvidersClient.List(ctx, nil, "")
 			if err != nil {

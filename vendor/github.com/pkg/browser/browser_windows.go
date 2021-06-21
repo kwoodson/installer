@@ -1,16 +1,9 @@
+//go:generate mkwinsyscall -output zbrowser_windows.go browser_windows.go
+//sys shellExecute(hwnd int, verb string, file string, args string, cwd string, showCmd int) (err error) = shell32.ShellExecuteW
 package browser
 
-import (
-	"os/exec"
-	"strings"
-	"syscall"
-)
+const sW_SHOWNORMAL = 1
 
 func openBrowser(url string) error {
-	r := strings.NewReplacer("&", "^&")
-	return runCmd("cmd", "/c", "start", r.Replace(url))
-}
-
-func setFlags(cmd *exec.Cmd) {
-	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
+	return shellExecute(0, "", url, "", "", sW_SHOWNORMAL)
 }
